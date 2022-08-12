@@ -1,0 +1,50 @@
+package com.company;
+
+import java.util.Scanner;
+
+public class Main {
+
+    public static void main(String[] args) {
+        Scanner scan = new Scanner(System.in);
+        System.out.print("Enter name ");
+        String a = scan.nextLine();
+        System.out.print("Enter password");
+        String b = scan.nextLine();
+        System.out.print("Lutfen kullanici adi; ");
+        String d = scan.nextLine();
+        System.out.print("Lutfen sifre girin;");
+        Checker(a,b);
+
+
+    }
+
+    public static void Checker(String Name , String Password) {
+        String NameFirst = Name;
+        String NameSecond = Password;
+        RealChecker(NameFirst,NameSecond);
+    }
+    public static void RealChecker(String NameFirst, String NameSecond){
+        int a=0;
+        String name1;
+        Scanner rscanner = new Scanner(System.in);
+
+        if(NameFirst == NameFirst && NameSecond == NameSecond){
+            System.out.print("Kullanıcı adı ve sifre dogru");
+        }
+        if (NameFirst==NameFirst && NameSecond !=NameSecond){
+            System.out.print("Sifre yanlis degistirmek ister misiniz evet icin 1 e basin");
+            a = rscanner.nextInt();
+            if(a ==1){
+                System.out.print("yeni sifre:");
+                name1 = rscanner.nextLine();
+                if(name1 == NameSecond){
+                    System.out.print("Yeni sifre eskisi ile ayni, yeni sifre girin");
+                }
+                else{
+                    System.out.print("Yeni şifre olusturuldu.");
+                }
+
+            }
+        }
+    }
+}
